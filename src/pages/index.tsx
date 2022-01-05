@@ -1,11 +1,10 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
-import { v4 as uuidv4 } from 'uuid';
-import ProductCard from '../components/ProductCard'
 import SearchBar from '../components/SearchBar';
 import FilterPrice from '../components/FilterPrice';
-import StyleList from '../styles/productList'
+import ProductList from '../components/ProductList';
+import { getPage } from '../services/getAPI'
 
 function Home(data: object) {
   return (
@@ -19,18 +18,25 @@ function Home(data: object) {
       <main>
         <SearchBar />
         <FilterPrice />
-        <StyleList>
-          {data.data.map((index) => <ProductCard key={uuidv4()} data={index} />)}
-        </StyleList>
+        <ProductList data={data.data} />
       </main>
+      <footer>
+        <button onClick={() => getPage(1)}>1</button>
+        <button onClick={() => getPage(2)}>2</button>
+        <button onClick={() => getPage(3)}>3</button>
+        <button onClick={() => getPage(4)}>...</button>
+        <button onClick={() => getPage(5)}>próximo</button>
+      </footer>
     </div >
   )
 }
 
 Home.getInitialProps = async () => {
+
   const URL = `https://wine-back-test.herokuapp.com/products?page=${1}&limit=${10}`
   const response = await axios.get(URL);
   return { data: response.data.items };
 }
+
 
 export default Home;
