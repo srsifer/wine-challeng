@@ -1,6 +1,16 @@
 import React from 'react'
 import StyleCard from '../styles/styleCards';
 
+const addToCart = (data) => {
+  let localCart = JSON.parse(localStorage.getItem('cart'))
+  if (localCart === null || localCart === undefined) {
+    return localStorage.setItem('cart', JSON.stringify([data]));
+  }
+  localCart
+  console.log(localCart)
+  localStorage.setItem('cart', JSON.stringify([...localCart, data]));
+}
+
 const ProductCard = (data) => {
   const { image, name, price, priceMember, priceNonMember, discount } = data.data
   return (
@@ -12,7 +22,7 @@ const ProductCard = (data) => {
         <p>sócio wine {`R$ ${priceMember}`}</p>
         <p>não sócio{`R$ ${priceNonMember}`}</p>
       </div>
-      <button>ADICIONAR</button>
+      <button onClick={() => addToCart(data.data)}>ADICIONAR</button>
     </StyleCard>
   )
 }
