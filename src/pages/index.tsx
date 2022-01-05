@@ -1,7 +1,10 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import React from 'react';
+import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
+import ProductCard from '../components/ProductCard'
 
-export default function Home() {
+function Home(data: object) {
   return (
     <div>
       <Head>
@@ -11,10 +14,18 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 >
-          commit inicial
-        </h1>
+        <div>
+          {data.data.map((index) => <ProductCard key={uuidv4()} data={index} />)}
+        </div>
       </main>
     </div >
   )
 }
+
+Home.getInitialProps = async () => {
+  const URL = `https://wine-back-test.herokuapp.com/products?page=${1}&limit=${10}`
+  const response = await axios.get(URL);
+  return { data: response.data.items }
+}
+
+export default Home;
