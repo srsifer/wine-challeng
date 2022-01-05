@@ -3,6 +3,9 @@ import React from 'react';
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 import ProductCard from '../components/ProductCard'
+import SearchBar from '../components/SearchBar';
+import FilterPrice from '../components/FilterPrice';
+import StyleList from '../styles/productList'
 
 function Home(data: object) {
   return (
@@ -14,9 +17,11 @@ function Home(data: object) {
       </Head>
 
       <main>
-        <div>
+        <SearchBar />
+        <FilterPrice />
+        <StyleList>
           {data.data.map((index) => <ProductCard key={uuidv4()} data={index} />)}
-        </div>
+        </StyleList>
       </main>
     </div >
   )
@@ -25,7 +30,7 @@ function Home(data: object) {
 Home.getInitialProps = async () => {
   const URL = `https://wine-back-test.herokuapp.com/products?page=${1}&limit=${10}`
   const response = await axios.get(URL);
-  return { data: response.data.items }
+  return { data: response.data.items };
 }
 
 export default Home;

@@ -1,19 +1,19 @@
 import React from 'react'
-import Image from 'next/image';
+import StyleCard from '../styles/styleCards';
 
 const ProductCard = (data) => {
-  console.log(data)
-  const { image, name, price, priceMember, priceNonMember, flag } = data.data
+  const { image, name, price, priceMember, priceNonMember, discount } = data.data
   return (
-    <div>
-      <img src={image} alt="vinho" />
-      <img src={flag} alt="flag" width="5%" />
-      <p>{name}</p>
-      <p>{price}</p>
-      <p>{priceMember}</p>
-      <p>{priceNonMember}</p>
-      <button>add to cart</button>
-    </div>
+    <StyleCard>
+      <div>
+        <img src={image} alt="vinho" />
+        <h3>{name}</h3>
+        <p>{`R$ ${price}`}, {discount} %off</p>
+        <p>sócio wine {`R$ ${priceMember}`}</p>
+        <p>não sócio{`R$ ${priceNonMember}`}</p>
+      </div>
+      <button>ADICIONAR</button>
+    </StyleCard>
   )
 }
 
