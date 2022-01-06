@@ -5,8 +5,12 @@ import SearchBar from '../components/SearchBar';
 import FilterPrice from '../components/FilterPrice';
 import ProductList from '../components/ProductList';
 import { getPage } from '../services/getAPI'
+import StyleMain from '../styles/homePage';
+import ButtonAdd from '../styles/buttons'
+
 
 function Home(data: object) {
+  const [] = useState()
   return (
     <div>
       <Head>
@@ -17,26 +21,27 @@ function Home(data: object) {
 
       <main>
         <SearchBar />
-        <FilterPrice />
-        <ProductList data={data.data} />
+        <StyleMain>
+          <FilterPrice />
+          <ProductList data={data.data} />
+        </StyleMain>
       </main>
       <footer>
-        <button onClick={() => getPage(1)}>1</button>
-        <button onClick={() => getPage(2)}>2</button>
-        <button onClick={() => getPage(3)}>3</button>
-        <button onClick={() => getPage(4)}>...</button>
-        <button onClick={() => getPage(5)}>próximo</button>
+        <ButtonAdd>
+          <button onClick={() => getPage(1)}>1</button>
+          <button onClick={() => getPage(2)}>2</button>
+          <button onClick={() => getPage(3)}>3</button>
+          <button onClick={() => getPage(4)}>...</button>
+        </ButtonAdd>
       </footer>
     </div >
   )
 }
 
 Home.getInitialProps = async () => {
-
   const URL = `https://wine-back-test.herokuapp.com/products?page=${1}&limit=${10}`
   const response = await axios.get(URL);
   return { data: response.data.items };
 }
-
 
 export default Home;

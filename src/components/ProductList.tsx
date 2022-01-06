@@ -5,11 +5,9 @@ import StyleList from '../styles/productList'
 
 export default function ProductList(data) {
   return (
-    <div>
-      <StyleList>
-        {data.data.map((index) => <ProductCard key={uuidv4()} data={index} />)}
-      </StyleList>
-    </div>
+    <StyleList>
+      {data.data.map((index) => <ProductCard key={uuidv4()} data={index} />)}
+    </StyleList>
   )
 }
 

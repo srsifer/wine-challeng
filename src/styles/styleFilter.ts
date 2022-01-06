@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
 const StyleFilter = styled.div`
+top: 190px;
+width:20%;
+height: 300px;
+display: flex;
+flex-direction: column;
+
+
  label {
   display: flex;
+  position: relative;
   flex-direction: column;
-  width: 256px;
-  height: 242px;
-  left: 160px;
-  top: 183px;
+  widith: 400px !important;
  }
 `;
 

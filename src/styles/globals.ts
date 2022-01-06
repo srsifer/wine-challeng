@@ -11,4 +11,5 @@ export default createGlobalStyle`
     Background: #DEDEDE;
     color: e1e1e6:
   }
+
 `;
