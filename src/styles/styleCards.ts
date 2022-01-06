@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyleCard = styled.div`
 width:256px;
 height: 370px;
-margin:10px;
+margin:30px;
 
 background-color: #FFFFFF;
 box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);

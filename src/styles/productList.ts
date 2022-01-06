@@ -6,6 +6,7 @@ flex-direction: row;
 flex-wrap: wrap;
 align-items: flex-start;
 ustify-content: space-between;
-width:80%;
+width:1250px;
+margin-rigth:400px
 `;
 export default StyleList;

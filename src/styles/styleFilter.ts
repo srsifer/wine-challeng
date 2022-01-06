@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const StyleFilter = styled.div`
-top: 190px;
-width:20%;
+margin-top: 100px;
+width:10%;
 height: 300px;
 display: flex;
 flex-direction: column;

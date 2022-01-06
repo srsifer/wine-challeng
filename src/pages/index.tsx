@@ -4,9 +4,8 @@ import axios from "axios";
 import SearchBar from '../components/SearchBar';
 import FilterPrice from '../components/FilterPrice';
 import ProductList from '../components/ProductList';
-import { getPage } from '../services/getAPI'
 import StyleMain from '../styles/homePage';
-import ButtonAdd from '../styles/buttons'
+import Pagination from '../components/Pagination'
 
 
 function Home(data: object) {
@@ -24,16 +23,10 @@ function Home(data: object) {
         <StyleMain>
           <FilterPrice />
           <ProductList data={apiInit.data} />
-          {console.log(data)}
         </StyleMain>
       </main>
       <footer>
-        <ButtonAdd>
-          <button onClick={() => getPage(1)}>1</button>
-          <button onClick={() => getPage(2)}>2</button>
-          <button onClick={() => getPage(3)}>3</button>
-          <button onClick={() => getPage(4)}>...</button>
-        </ButtonAdd>
+        <Pagination />
       </footer>
     </div >
   )
