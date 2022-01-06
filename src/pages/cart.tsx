@@ -10,15 +10,17 @@ const cart = () => {
   }, []);
 
   const removeToCart = (idRemove: string) => {
-    setState(state.filter((index) => idRemove !== index.id))
-    localStorage.setItem('cart', JSON.stringify(state))
+    const filtredState = state.filter((index) => idRemove !== index.id)
+    setState(filtredState)
+    localStorage.setItem('cart', JSON.stringify(filtredState))
   }
 
   {
-    if (state === [] || state === null) {
+    if (state === [] || !state) {
       return (<div>
-        <p>nada por aqui</p>
         <SearchBar />
+        <Link href="/"><a>voltar</a></Link>
+        <p>nada por aqui</p>
       </div>)
     }
 

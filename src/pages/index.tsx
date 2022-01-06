@@ -10,7 +10,7 @@ import ButtonAdd from '../styles/buttons'
 
 
 function Home(data: object) {
-  const [] = useState()
+  const [apiInit, setApiInit] = useState(data)
   return (
     <div>
       <Head>
@@ -23,7 +23,8 @@ function Home(data: object) {
         <SearchBar />
         <StyleMain>
           <FilterPrice />
-          <ProductList data={data.data} />
+          <ProductList data={apiInit.data} />
+          {console.log(data)}
         </StyleMain>
       </main>
       <footer>
