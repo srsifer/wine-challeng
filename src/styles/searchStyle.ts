@@ -8,7 +8,6 @@ justify-content: space-around;
 align-items: center;
 background-color: white;
 
-
 section {
   width: 30%;
   display:flex;
