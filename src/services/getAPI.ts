@@ -12,7 +12,7 @@ export const getPrice = async (param1: number, param2: number) => {
   return { data: response.data.items }
 }
 
-export const getProductByName = async (name: string) => {
+export const getProductByName = async (name) => {
   const URL = `https://wine-back-test.herokuapp.com/products?name=${name}`;
   const response = await axios.get(URL);
   return { data: response.data.items }

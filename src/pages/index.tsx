@@ -30,7 +30,7 @@ function Home(data: object) {
   }
 
   useEffect(() => {
-    console.log(offset)
+
     if (offset !== 0) {
       getNextPage()
     }

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const StyleCard = styled.div`
+const StylesDiv = styled.div`
 width:256px;
-height: 370px;
+height: 400px;
 margin:30px;
 
 background-color: #FFFFFF;
@@ -24,8 +24,8 @@ flex-wrap: nowrap;
   }
 
   img {
-    widith: 198,57px;
-    height: 200px;
+    widith: 200px;
+    height: 300px;
   }
 
   h3 {
@@ -86,10 +86,12 @@ flex-wrap: nowrap;
     height: 39px;
     left: 0px;
     top: 348px;
-    background: #7EBC43;
+    background: red;
     box-shadow: 0px 0.973384px 1px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     color: #FFFFFF;
+    border:none;
   }
 `;
-export default StyleCard
+
+export default StylesDiv;

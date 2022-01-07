@@ -1,0 +1,28 @@
+<svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_8463_481)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28 56.0397C43.464 56.0397 56 43.5036 56 28.0397C56 12.5757 43.464 0.0396729 28 0.0396729C12.536 0.0396729 0 12.5757 0 28.0397C0 43.5036 12.536 56.0397 28 56.0397Z" fill="#F9B950"/>
+<mask id="mask0_8463_481" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="56" height="57">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28 56.0397C43.464 56.0397 56 43.5036 56 28.0397C56 12.5757 43.464 0.0396729 28 0.0396729C12.536 0.0396729 0 12.5757 0 28.0397C0 43.5036 12.536 56.0397 28 56.0397Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_8463_481)">
+<rect x="8" y="2.03967" width="40" height="56" fill="url(#pattern0)"/>
+</g>
+<mask id="mask1_8463_481" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="2" width="40" height="18">
+<rect x="8" y="2.03967" width="40" height="17" fill="white"/>
+</mask>
+<g mask="url(#mask1_8463_481)">
+<rect x="8" y="2.03967" width="40" height="56" fill="url(#pattern1)"/>
+</g>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_8463_481" transform="scale(0.000591017 0.000416667)"/>
+</pattern>
+<pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_8463_481" transform="scale(0.000591017 0.000416667)"/>
+</pattern>
+<clipPath id="clip0_8463_481">
+<rect width="56" height="56" fill="white" transform="translate(0 0.0396729)"/>
+</clipPath>
+</defs>
+</svg>

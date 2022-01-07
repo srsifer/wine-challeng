@@ -13,10 +13,10 @@ const addToCart = (data) => {
 }
 
 const ProductCard = (data) => {
-  const { image, name, price, priceMember, priceNonMember, discount } = data.data
+  const { image, name, price, priceMember, priceNonMember, discount, } = data.data
   return (
     <StyleCard>
-      <Link href="/productDetails"><a>
+      <Link href={`${name}`}><a>
         <img src={image} alt="vinho" />
         <h3>{name}</h3>
         <h4>{`R$ ${price}`}, {discount} %off</h4>

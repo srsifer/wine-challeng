@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link'
-import SearchBar from '../components/SearchBar';
 import SearchStyle from '../styles/searchStyle'
 import wineSvg from '../../public/black'
+import StylesDiv from '../styles/cartStyles';
+import SectionStylesCart from '../styles/sectionStylesCart'
+
 
 const cart = () => {
   const [state, setState] = useState([])
@@ -49,18 +51,22 @@ const cart = () => {
           </section>
           <Link href="/"><a>voltar</a></Link>
         </SearchStyle>
-        {state.map(({ image, name, id, discount, price, priceMember, priceNonMember }) => {
-          return (
-            <div key={uuidv4()}>
-              <img src={image} alt="vinho" />
-              <h3>{name}</h3>
-              <p>{`R$ ${price}`}, {discount} %off</p>
-              <p>sócio wine {`R$ ${priceMember}`}</p>
-              <p>não sócio{`R$ ${priceNonMember}`}</p>
-              <button onClick={() => removeToCart(id)}>remover</button>
-            </div>
-          )
-        })}
+        <SectionStylesCart>
+          {state.map(({ image, name, id, discount, price, priceMember, priceNonMember }) => {
+            return (
+              <div key={uuidv4()}>
+                <StylesDiv>
+                  <img src={image} alt="vinho" />
+                  <h3>{name}</h3>
+                  <p>{`R$ ${price}`}, {discount} %off</p>
+                  <p>sócio wine {`R$ ${priceMember}`}</p>
+                  <p>não sócio{`R$ ${priceNonMember}`}</p>
+                  <button onClick={() => removeToCart(id)}>remover</button>
+                </StylesDiv>
+              </div>
+            )
+          })}
+        </SectionStylesCart>
       </div>
     )
   }
