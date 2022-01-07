@@ -30,8 +30,10 @@ export default function SearchBar({ search, setSearch }) {
         <p>Ofertas</p>
         <p>Eventos</p>
       </section>
-      <input onChange={(e) => inputName(e.target)} type="text" />
-      <button onClick={() => searchName()}>buscar</button>
+      <div>
+        <input onChange={(e) => inputName(e.target)} type="text" />
+        <button onClick={() => searchName()}>buscar</button>
+      </div>
       <Link href="/cart"><a> <Image src="/../../public/cartIcon.png" width="20px" height="20px" /> </a></Link>
     </SearchStyle>
   )

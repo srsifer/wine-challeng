@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link'
 import SearchBar from '../components/SearchBar';
+import SearchStyle from '../styles/searchStyle'
+import wineSvg from '../../public/black'
 
 const cart = () => {
   const [state, setState] = useState([])
@@ -18,7 +20,16 @@ const cart = () => {
   {
     if (state === [] || !state) {
       return (<div>
-        <SearchBar />
+        <SearchStyle>
+          <h1>{wineSvg}</h1>
+          <section>
+            <p>Clube</p>
+            <p>Loja</p>
+            <p>Produtores</p>
+            <p>Ofertas</p>
+            <p>Eventos</p>
+          </section>
+        </SearchStyle>
         <Link href="/"><a>voltar</a></Link>
         <p>nada por aqui</p>
       </div>)
@@ -27,8 +38,17 @@ const cart = () => {
     return (
 
       <div>
-        <SearchBar />
-        <Link href="/"><a>voltar</a></Link>
+        <SearchStyle>
+          <h1>{wineSvg}</h1>
+          <section>
+            <p>Clube</p>
+            <p>Loja</p>
+            <p>Produtores</p>
+            <p>Ofertas</p>
+            <p>Eventos</p>
+          </section>
+          <Link href="/"><a>voltar</a></Link>
+        </SearchStyle>
         {state.map(({ image, name, id, discount, price, priceMember, priceNonMember }) => {
           return (
             <div key={uuidv4()}>
