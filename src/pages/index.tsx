@@ -1,15 +1,36 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import SearchBar from '../components/SearchBar';
 import FilterPrice from '../components/FilterPrice';
 import ProductList from '../components/ProductList';
 import StyleMain from '../styles/homePage';
 import Pagination from '../components/Pagination'
+import { getPage } from '../services/getAPI'
 
+const limit: number = 9;
 
 function Home(data: object) {
   const [apiInit, setApiInit] = useState(data)
+  const [offset, setOffSet] = useState(0)
+
+  const getNextPage = async () => {
+    const page = await getPage((offset / 9))
+    setApiInit(page)
+    console.log(page)
+  }
+  useEffect(() => {
+    if (offset !== 0) {
+      getNextPage()
+    }
+    console.log(offset)
+  }, [offset])
+  /*const getAlldataApi = () => {
+    const allApi = getApiFull()
+    setpagintion(allApi)
+  }*/
+
+
   return (
     <div>
       <Head>
@@ -26,14 +47,19 @@ function Home(data: object) {
         </StyleMain>
       </main>
       <footer>
-        <Pagination />
+        <Pagination
+          limit={limit}
+          total={62}
+          offset={offset}
+          setOffSet={setOffSet}
+        />
       </footer>
     </div >
   )
 }
 
 Home.getInitialProps = async () => {
-  const URL = `https://wine-back-test.herokuapp.com/products?page=${1}&limit=${10}`
+  const URL = `https://wine-back-test.herokuapp.com/products?page=${1}&limit=${9}`
   const response = await axios.get(URL);
   return { data: response.data.items };
 }

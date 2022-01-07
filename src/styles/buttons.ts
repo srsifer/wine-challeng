@@ -7,13 +7,15 @@ const ButtonAdd = styled.div`
   flex-wrap: nowrap;
   justify-content: center;
 
+
+
 button {
     color: #B6116E;
     border: 1px solid #B6116E;
     box-sizing: border-box;
     border-radius: 3px;
     height: 38px;
-    width: 38px;
+    width: 70px;
     left: 0px;
     top: 0px;
     border-radius: 3px;
@@ -22,6 +24,7 @@ button {
     box-sizing: border-box;
     border-radius: 3px;
     color:white;
+
 }
 `;
 

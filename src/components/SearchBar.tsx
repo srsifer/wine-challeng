@@ -17,7 +17,6 @@ export default function SearchBar() {
 
   const searchName = async () => {
     const result = await getProductByName(nameSearch)
-    console.log(result)
   }
   return (
     <SearchStyle>
