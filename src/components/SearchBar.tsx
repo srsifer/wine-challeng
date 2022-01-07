@@ -8,8 +8,8 @@ import Image from 'next/image'
 
 
 
-export default function SearchBar() {
-  const [nameSearch, setNameSearch] = useState()
+export default function SearchBar({ search, setSearch }) {
+  const [nameSearch, setNameSearch] = useState(null)
 
   const inputName = ({ value }) => {
     setNameSearch(value)
@@ -17,6 +17,8 @@ export default function SearchBar() {
 
   const searchName = async () => {
     const result = await getProductByName(nameSearch)
+    setSearch(result)
+    console.log(result.data)
   }
   return (
     <SearchStyle>
