@@ -21,7 +21,7 @@ function Home(data: object) {
   }
 
   const getNextPage = async () => {
-    const page = await getPage((offset / 9))
+    const page = await getPage(Math.max((offset / limit), 1))
     setApiInit(page)
   }
 
@@ -30,6 +30,7 @@ function Home(data: object) {
   }
 
   useEffect(() => {
+    console.log(offset)
     if (offset !== 0) {
       getNextPage()
     }

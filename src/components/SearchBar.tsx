@@ -3,8 +3,12 @@ import SearchStyle from '../styles/searchStyle'
 import wineSvg from '../../public/black'
 import { getProductByName } from '../services/getAPI';
 import Link from 'next/link'
-import inconCart from '../../public/cartIcon.png'
-import Image from 'next/image'
+import { searchIcon } from '../../public/Busca';
+import { perfilIcon } from '../../public/conta';
+
+
+
+
 
 
 
@@ -31,9 +35,10 @@ export default function SearchBar({ search, setSearch }) {
       </section>
       <div>
         <input onChange={(e) => inputName(e.target)} type="text" />
-        <button onClick={() => searchName()}>buscar</button>
+        <button onClick={() => searchName()}>{searchIcon}</button>
       </div>
-      <Link href="/cart"><a> <Image src="/../../public/cartIcon.png" width="20px" height="20px" /> </a></Link>
+      <h2>{perfilIcon}</h2>
+      <Link href="/cart"><a> carrinho </a></Link>
     </SearchStyle>
   )
 }
