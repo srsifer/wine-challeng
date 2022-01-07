@@ -6,7 +6,7 @@ import FilterPrice from '../components/FilterPrice';
 import ProductList from '../components/ProductList';
 import StyleMain from '../styles/homePage';
 import Pagination from '../components/Pagination'
-import { getPage, getProductByName } from '../services/getAPI'
+import { getPage } from '../services/getAPI'
 
 const limit: number = 9;
 
@@ -14,6 +14,11 @@ function Home(data: object) {
   const [apiInit, setApiInit] = useState(data)
   const [offset, setOffSet] = useState(0)
   const [search, setSearch] = useState(null)
+  const [price, setPrice] = useState(null)
+
+  const getProductbyPice = async () => {
+    setApiInit(price)
+  }
 
   const getNextPage = async () => {
     const page = await getPage((offset / 9))
@@ -23,6 +28,7 @@ function Home(data: object) {
   const getProductName = async () => {
     setApiInit(search)
   }
+
   useEffect(() => {
     if (offset !== 0) {
       getNextPage()
@@ -35,6 +41,12 @@ function Home(data: object) {
     }
   }, [search])
 
+  useEffect(() => {
+    if (price !== null) {
+      getProductbyPice()
+    }
+  }, [price])
+
   return (
     <div>
       <Head>
@@ -46,7 +58,7 @@ function Home(data: object) {
       <main>
         <SearchBar search={search} setSearch={setSearch} />
         <StyleMain>
-          <FilterPrice />
+          <FilterPrice price={price} setPrice={setPrice} />
           <ProductList data={apiInit.data} />
         </StyleMain>
       </main>
