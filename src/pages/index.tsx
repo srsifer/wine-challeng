@@ -10,7 +10,7 @@ import { getPage } from '../services/getAPI'
 
 const limit: number = 9;
 
-function Home(data: object) {
+function Home(data) {
   const [apiInit, setApiInit] = useState(data)
   const [offset, setOffSet] = useState(0)
   const [search, setSearch] = useState(null)

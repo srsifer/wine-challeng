@@ -24,6 +24,12 @@ button {
   border: none !important;
 }
 
+a {
+  text-decoration: none;
+  color:black !important;
+  font-size:22px
+ }
+
 input {
   border-radius: 15px;
   height:30px;
